@@ -6,7 +6,6 @@ import getDataFormat from "./getDataFormat";
 import { dataArray } from "../../data/data";
 
 function Chart() {
-
   // Define data
 
   const [dataArr, setDataArr] = useState([{}]);
@@ -73,7 +72,7 @@ function Chart() {
     });
 
     // Create series
-    
+
     let series = chart.series.push(
       am5xy.LineSeries.new(root, {
         name: "Series",
@@ -132,15 +131,13 @@ function Chart() {
     );
     cursor.lineY.set("visible", false);
 
-
     return () => {
       root.dispose();
     };
   }, [dataArr]);
 
   useEffect(() => {
-
-// Define data
+    // Define data
 
     setDataArr(getDataFormat(dataArray));
   }, []);
